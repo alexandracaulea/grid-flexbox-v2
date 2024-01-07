@@ -1,0 +1,256 @@
+/* colors - see style guide for docs. 
+Clearly there is more you could place in variables, up to you if you want to use them. My answer does not go beyond colors to keep the code easier to read. */
+
+:root {
+  --color1: #001219;
+  --color2: #005f73;
+  --color3: #3d9397;
+  --color4: #94d28d;
+  --color5: #e9d8a6;
+  --color6: #ee9800;
+  --color7: #ca6702;
+  --color8: #bb3e03;
+  --color9: #ae2012;
+  --color10: #9b2226;
+}
+
+/* generic site styles */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #dbe5de;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+figure {
+  max-height: 400px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 5px;
+
+  img {
+    width: 100%;
+    margin-bottom: -4px;
+    object-fit: cover;
+    /* object-position: 0 -150px; */
+  }
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 1.875rem;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  a {
+    display: block;
+    padding: 1rem;
+    color: var(--color1);
+    text-decoration: none;
+  }
+}
+
+.color2,
+.color2 a:hover {
+  color: var(--color2);
+  border-color: var(--color2);
+}
+
+.color3,
+.color3 a:hover {
+  color: var(--color3);
+  border-color: var(--color3);
+}
+
+.color4,
+.color4 a:hover {
+  color: var(--color4);
+  border-color: var(--color4);
+}
+
+.color5,
+.color5 a:hover {
+  color: var(--color5);
+  border-color: var(--color5);
+}
+
+.color6,
+.color6 a:hover {
+  color: var(--color6);
+  border-color: var(--color6);
+}
+
+.color7,
+.color7 a:hover {
+  color: var(--color7);
+  border-color: var(--color7);
+}
+
+.color8,
+.color8 a:hover {
+  color: var(--color8);
+  border-color: var(--color8);
+}
+
+.color9,
+.color9 a:hover {
+  color: var(--color9);
+  border-color: var(--color9);
+}
+
+#mission {
+  margin-bottom: 3rem;
+}
+
+.missiontext {
+  display: block;
+  line-height: 1.7;
+}
+
+.missionimg {
+  display: block;
+  max-height: 100px;
+}
+
+.footer {
+  background-color: var(--color-5);
+}
+
+footer {
+  padding: 3rem;
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h4 {
+    margin-top: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    margin-right: 1rem;
+  }
+
+  address {
+    font-style: normal;
+    margin-top: 2rem;
+    font-weight: 700;
+  }
+}
+
+/* Initial mobile layout: a series of images stacked on top of each other with the figure caption over the image. */
+
+/* At this breakpoint, transition to 2 figures per line */
+
+@media (min-width: 550px) {
+  section {
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+    li {
+      flex-basis: 49.5%;
+    }
+  }
+
+  /* figure img {
+    object-position: 0;
+  } */
+
+  .missiontext {
+    display: flow-root;
+    max-width: 900px;
+  }
+
+  .missionimg {
+    float: left;
+    max-height: 211px;
+    shape-outside: polygon(
+      35.84% 94.87%,
+      34.64% 87.05%,
+      51.64% 4.06%,
+      55.1% 2.38%
+    );
+  }
+
+  footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    address {
+      margin-top: 0;
+      flex-basis: 49.5%;
+    }
+
+    .social {
+      flex-basis: 49.5%;
+    }
+  }
+}
+
+/* At this breakpoint, transition to 3 figures per line */
+
+@media (min-width: 800px) {
+  section {
+    h2 {
+      margin-left: 100px;
+    }
+
+    li {
+      flex-basis: 32.5%;
+    }
+  }
+
+  .social {
+    flex-basis: 32.5%;
+  }
+
+  address {
+    flex-basis: 65.5%;
+  }
+}
